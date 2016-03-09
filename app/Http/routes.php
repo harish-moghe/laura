@@ -25,13 +25,22 @@ Route::get('/', function () {
   | kernel and includes session state, CSRF protection, and more.
   |
  */
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::group(['middleware' => ['web']], function () {
-    //
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', function () {
+        return view('welcome');
+    });
 });
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'backend', 'before' => 'admin'], function() {
     // only /admin/ routes in here that will be in a namespace folder of "backend" with admin middleware
     Route::resource('pages', 'PagesController'); // app/Http/controllers/backend/PagesController.php
+    Route::resource('users', 'UserController');
 });

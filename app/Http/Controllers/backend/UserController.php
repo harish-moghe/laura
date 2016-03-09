@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\Backend;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use View;
 
-class PagesController extends Controller {
+class UserController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -16,9 +17,7 @@ class PagesController extends Controller {
      */
     public function index() {
         //
-        
-         return View::make('backend.pages.index');
-         
+        return View::make("backend.users.index");
     }
 
     /**
@@ -28,7 +27,7 @@ class PagesController extends Controller {
      */
     public function create() {
         //
-        return View::make('backend.pages.index');
+        return View::make("backend.users.create");
     }
 
     /**
@@ -39,6 +38,16 @@ class PagesController extends Controller {
      */
     public function store(Request $request) {
         //
+        $user_name = $request->input('username');
+        $user_password = $request->input('password');
+        $cnf_password = $request->input('cnf_password');
+        $email_address = $request->input('email');
+        $role = $request->input('role');
+        User::create([
+            'name' => $user_name,
+            'email' => $email_address,
+            'password' => bcrypt($user_password),
+        ]);
     }
 
     /**

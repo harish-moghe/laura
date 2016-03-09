@@ -6,5 +6,7 @@
  */
 ?>
 @include("backend.layouts.header")
-@yield('content');
+@include("backend.layouts.left-sidebar")
+@yield('content')
+
 @include("backend.layouts.footer")

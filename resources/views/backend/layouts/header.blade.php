@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="{{ $url = asset('backend/bootstrap/css/bootstrap.min.css') }}">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="{{ $url = asset('backend/css/font-awesome.min.css') }}">
-       
+
         <link rel="stylesheet" href="{{ $url = asset('backend/dist/css/AdminLTE.min.css') }}">
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
@@ -34,8 +34,9 @@
         <link rel="stylesheet" href="{{ $url = asset('backend/plugins/daterangepicker/daterangepicker-bs3.css') }}">
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="{{ $url = asset('backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
-        
+
         <link rel="stylesheet" href="{{ $url = asset('backend/css/ionicons.min.css') }}">
+        <link rel="stylesheet" href="{{ $url = asset('backend/plugins/select2/select2.min.css') }}">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -295,4 +296,4 @@
                     </div>
                 </nav>
             </header>
-            @include("backend.layouts.left-sidebar")
+            
